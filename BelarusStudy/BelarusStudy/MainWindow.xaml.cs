@@ -23,6 +23,7 @@ namespace BelarusStudy
         public MainWindow()
         {
             InitializeComponent();
+            new MainLogic(spAlp,spAnswer,pic);
         }
     }
 }

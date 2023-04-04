@@ -5,8 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BelarusStudy"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="Belarus quiz" Height="450" Width="800">
+    <Grid ShowGridLines="True">
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="*"/>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
+        </Grid.RowDefinitions>
+        <Image Grid.Row="0" x:Name="pic" />
+        <StackPanel Grid.Row="1" Orientation="Horizontal" x:Name="spAnswer"
+                   
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
+            
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" x:Name="spAlp"
+                  
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
+
+        </StackPanel>
     </Grid>
 </Window>
