@@ -11,7 +11,7 @@ namespace BelarusStudy
 {
     class MainLogic
     {
-        private StackPanel spAnswer;
+        private StackPanel spAnswers;
         Image image;
         string currenctAnswer;
         QuestionDB data;
@@ -60,7 +60,7 @@ namespace BelarusStudy
 
             tb.MouseDown += (s, e) =>
             {
-                stackPanel.Children.Remove((s as TextBlock));
+                stackPanel.Children.Remove(s as TextBlock);
 
             };
 
@@ -71,41 +71,78 @@ namespace BelarusStudy
         //Проверка ответа
         public void CheckAnswer()
         {
-            string word = string.Empty;
-            foreach (var e in spAnswer.Children)
+            string word = String.Empty;
+            foreach (var e in spAnswers.Children)
                 word += (e as TextBlock).Text;
-            if (word == currenctAnswer) LoadNewQuestion();
+            if (word == currenctAnswer) { LoadNewQuestion();}
 
         }
+
 
         //Загрузка вопроса (картинка и сохранения ответа)
         private void LoadNewQuestion()
         {
-            var q = data.currectQuestion;
-            image.Source = q.Picture;
+            var q = data.CurrectQuestion;
+           image.Source = q.Picture;
             currenctAnswer = q.Answer;
-            spAnswer.Children.Clear();
+            spAnswers.Children.Clear();
         }
 
         /// Создание класса с основной логикой приложения
         /// <param name="SPAlphabet">ссылка StackPanel для отбражения алфавита</param> 
         /// <param name="SPAnswer">ссылка StackPanel для отбражения ответа</param>
         /// <param name="ImageView">ссылка Шьфпу для отбражения изображения</param>
-        public MainLogic(StackPanel SPAlphabet, StackPanel SPAnswer, Image ImageView)
+        public MainLogic(StackPanel SPAlphabet, StackPanel SPAnswers, Image ImageView)
         {
             data = new QuestionDB();
             image = ImageView;
-            spAnswer = SPAnswer;
+            spAnswers = SPAnswers;
+            
 
-            for (int i = (int)'а'; i < (int)'я'; i++)
+            for (int i = (int)'а'; i <= (int)'я'; i++)
             {
-                SPAlphabet.Children.Add(CreateTb($"{(char)i}",SPAnswer));
-                if(i == (int)'e')
+                SPAlphabet.Children.Add(CreateTb($"{(char)i}",SPAnswers));
+                if(i == (int)'е')
                 {
-                    SPAlphabet.Children.Add(CreateTb($"{'ё'}", SPAnswer));
+                    SPAlphabet.Children.Add(CreateTb($"{'ё'}", SPAnswers));
                 }
+
+                if (i == (int)'з')
+                {
+                    SPAlphabet.Children.Add(CreateTb($"{'і'}", SPAnswers));
+                   
+                }
+
+                if (i == (int)'и')
+                {
+                    SPAlphabet.Children.RemoveAt(10);
+                }
+
+                if (i == (int)'у')
+                {
+                    SPAlphabet.Children.Add(CreateTb($"{'ў'}", SPAnswers));
+
+                }
+
+                if (i == (int)'щ')
+                {               
+                    SPAlphabet.Children.RemoveAt(27);              
+                }
+
+                if (i == (int)'ъ')
+                {
+                    SPAlphabet.Children.RemoveAt(27);
+                }
+
+                if (i == (int)'я')
+                {
+                    SPAlphabet.Children.Add(CreateTb($"{'\''}", SPAnswers));
+
+                }
+
             }
 
+            // MessageBox.Show("test");
             LoadNewQuestion();
         }
     }

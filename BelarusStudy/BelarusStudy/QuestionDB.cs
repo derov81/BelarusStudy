@@ -16,7 +16,7 @@ namespace BelarusStudy
         private int index;
 
         //текущий вопрос
-        public Question currectQuestion
+        public Question CurrectQuestion
         {
             get
             {

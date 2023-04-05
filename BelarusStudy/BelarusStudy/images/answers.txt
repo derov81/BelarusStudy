@@ -1,2 +1,2 @@
-images/pic0.jpg|гана
-images/pic1.jpg|гануля
+images/pic0.jpg|а
+images/pic1.jpg|б
