@@ -25,5 +25,11 @@ namespace BelarusStudy
             InitializeComponent();
             new MainLogic(spAlp,spAnswer,pic);
         }
+
+        private void btn1_Click(object sender, RoutedEventArgs e)
+        {
+            Edit edit = new Edit();
+            edit.ShowDialog();
+        }
     }
 }

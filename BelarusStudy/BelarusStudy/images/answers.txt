@@ -1,2 +1,3 @@
-images/pic0.jpg|�
-images/pic1.jpg|�
+﻿images/pic0.jpg|смоўж
+images/pic1.jpg|абібок
+images/pic2.jpg|конік

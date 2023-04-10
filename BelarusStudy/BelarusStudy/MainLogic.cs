@@ -36,6 +36,7 @@ namespace BelarusStudy
             tb.MouseDown += (s, e) =>
             {
                 ToSp.Children.Add(CreateTbAlp((s as TextBlock).Text, ToSp));
+               
                 CheckAnswer();
             };
 
@@ -73,9 +74,22 @@ namespace BelarusStudy
         {
             string word = String.Empty;
             foreach (var e in spAnswers.Children)
+                
                 word += (e as TextBlock).Text;
-            if (word == currenctAnswer) { LoadNewQuestion();}
+           
+            if (word == currenctAnswer)
+                 {
+                Success();
+                LoadNewQuestion();
+                } 
 
+
+        }
+
+        public void Success()
+        {
+            Success success = new Success();
+            success.ShowDialog();
         }
 
 
@@ -83,10 +97,12 @@ namespace BelarusStudy
         private void LoadNewQuestion()
         {
             var q = data.CurrectQuestion;
-           image.Source = q.Picture;
+            image.Source = q.Picture;
             currenctAnswer = q.Answer;
             spAnswers.Children.Clear();
         }
+
+      
 
         /// Создание класса с основной логикой приложения
         /// <param name="SPAlphabet">ссылка StackPanel для отбражения алфавита</param> 
@@ -140,9 +156,10 @@ namespace BelarusStudy
 
                 }
 
+            
             }
 
-            // MessageBox.Show("test");
+            
             LoadNewQuestion();
         }
     }

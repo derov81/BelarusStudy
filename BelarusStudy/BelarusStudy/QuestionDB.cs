@@ -20,8 +20,10 @@ namespace BelarusStudy
         {
             get
             {
+
                 index++;
                 return db[index % db.Count];
+              
             }
         }
 
@@ -31,12 +33,13 @@ namespace BelarusStudy
             this.db = new List<Question>();
             this.index = 0;
 
-            var dataFile = File.ReadAllLines(@"..\..\images\answers.txt");
+            var dataFile = File.ReadAllLines(@"..\..\images\answers.txt"/*,Encoding.GetEncoding(1251)*/);
 
             foreach (var e in dataFile)
             {
                 var args = e.Split('|');
                 db.Add(new Question(args[0], args[1]));
+                
             }
         }
     }

@@ -55,9 +55,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Edit.xaml.cs">
+      <DependentUpon>Edit.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainLogic.cs" />
     <Compile Include="Question.cs" />
     <Compile Include="QuestionDB.cs" />
+    <Compile Include="Success.xaml.cs">
+      <DependentUpon>Success.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Edit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -70,6 +80,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Success.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -98,13 +112,22 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="images\answers.txt" />
     <Resource Include="images\pic0.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="images\pic1.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="images\answers.txt" />
+    <Resource Include="images\pic2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\img0.jpg" />
+    <Resource Include="img\img1.jpg" />
+    <Resource Include="img\img2.jpg" />
+    <Resource Include="img\img3.jpg" />
+    <Resource Include="img\img4.jpg" />
+    <Resource Include="img\img5.jpg" />
+    <Resource Include="img\img6.jpg" />
+    <Resource Include="img\img7.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

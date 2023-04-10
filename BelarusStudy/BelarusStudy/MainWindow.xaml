@@ -5,25 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BelarusStudy"
         mc:Ignorable="d"
-        Title="Belarus quiz" Height="450" Width="800">
+        Title="Belarus quiz" Height="450" Width="1250">
     <Grid ShowGridLines="True">
         <Grid.RowDefinitions>
             <RowDefinition  Height="*"/>
             <RowDefinition Height="100" />
             <RowDefinition Height="100" />
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <!--<Button x:Name="btn1" VerticalAlignment="Top" HorizontalAlignment="Right" Click="btn1_Click">Edit</Button>!-->
         <Image Grid.Row="0" x:Name="pic" />
         <StackPanel Grid.Row="1" Orientation="Horizontal" x:Name="spAnswer"
                    
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center">
-            
+
         </StackPanel>
         <StackPanel Grid.Row="2" Orientation="Horizontal" x:Name="spAlp"
                   
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center">
-
+            
         </StackPanel>
+        
+           
     </Grid>
 </Window>
